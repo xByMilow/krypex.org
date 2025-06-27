@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Server Regelwerk</title>
+<style>
+@font-face {
+    font-family: "Minecraft";
+    src: url('https://cdn.kypx.me/raw/ZKQrB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: "Minecraft", sans-serif;
+    color: white;
+    user-select: none;
+}
+
+:root {
+    --primary-color: white;
+    --secondary-color: #838383;
+    --background-dark: #121212;
+    --accent-color: #4166f5;
+    --background-box: linear-gradient(to bottom left, #0000008f, #00000059);
+}
+
+body {
+    color: var(--primary-color);
+    background-color: var(--background-dark);
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wallpaper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    overflow: hidden;
+}
+
+.wallpaper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+}
+
+.center-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 90%;
+    max-width: 800px;
+    background: var(--background-box);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: border 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.center-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: var(--accent-color);
+    margin-top: 0;
+}
+
+ul {
+    padding-left: 20px;
+}
+.footer-shared {
+  position: fixed;
+  font-size: 0.75rem;
+  background: transparent;
+  padding: 0;
+  z-index: 999;
+  color: #ccc;
+  gap: 10px;
+  }
+  
+  .legal-footer {
+  left: 16px;
+  bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  }
+  
+  .footer-right {
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  }
+  
+  .footer-link-box {
+  background: var(--background-box, linear-gradient(to bottom left, #0000008f, #00000059));
+  padding: 6px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+  transition: background 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;
+  }
+  
+  .footer-link-box:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+  }
+  
+  .footer-link-box a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  }
+  
+  .footer-link-box a:hover,
+  .footer-link-box a:focus-visible {
+  color: #fff;
+  outline: none;
+  }
+  
+  @media (max-width: 480px) {
+  .legal-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-right {
+    align-items: flex-end;
+  }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="wallpaper">
+  <img src="https://cdn.kypx.me/raw/k6fa7.jpg" alt="Wallpaper">
+</div>
+
+<div class="center-box">
+  <h2>§1 Allgemeines Spielerverhalten</h2>
+  <ul>
+    <li>Beleidigungen und Belästigung anderer Spieler sind untersagt.</li>
+    <li>Eigenwerbung ohne Erlaubnis ist nicht gestattet.</li>
+    <li>Serverhetze ist verboten. Konstruktive Kritik kann in vorgesehenen Kanälen geäußert werden.</li>
+    <li>Betteln nach Rängen oder Vorteilen ist untersagt.</li>
+    <li>Real-Life-Drohungen (z.B. Gewalt, Doxxing) sind strengstens verboten.</li>
+  </ul>
+</div>
+
+<div class="center-box">
+  <h2>§2 Technische Integrität und Fairness</h2>
+  <ul>
+    <li>Das Ausnutzen von Bugs ist verboten.</li>
+    <li>Lag Maschinen und serverlastende Konstruktionen sind untersagt.</li>
+    <li>DDoS Angriffe oder ähnliche Attacken sind untersagt.</li>
+    <li>Manipulation von Packets zur Vorteilnahme (z.B. Fliegen, Crashs) ist verboten.</li>
+    <li>Hacked Clients (z.B. Meteor, Wurst) sind verboten.</li>
+    <li>Erlaubte Mods: Sodium, Indium und ähnliche FPS-Optimierungen.</li>
+    <li>Automatisierung durch Bots, Makros oder Auto Clicker ist untersagt.</li>
+  </ul>
+</div>
+
+<div class="center-box">
+  <h2>§3 Wirtschaft und Handel</h2>
+  <ul>
+    <li>Betrug beim Handeln (Scamming) ist erlaubt.</li>
+    <li>Griefing fremder Bauten ist erlaubt.</li>
+    <li>Diebstahl aus fremden Basen oder Truhen ist erlaubt.</li>
+    <li>Handel mit Echtgeld (RWT) ist untersagt.</li>
+  </ul>
+</div>
+
+<div class="center-box">
+  <h2>§4 Bauen und Umwelt</h2>
+  <ul>
+    <li>Bauten sollen ordentlich und nicht störend gestaltet werden.</li>
+    <li>Massive Landschaftszerstörung ist untersagt.</li>
+    <li>Redstone-Maschinen dürfen keine Lags verursachen.</li>
+  </ul>
+</div>
+
+<div class="center-box">
+  <h2>§5 Community und Kommunikation</h2>
+  <ul>
+    <li>Hauptsprache ist Deutsch; andere Sprachen sind erlaubt, wenn verständlich.</li>
+    <li>Beleidigende oder anstößige Skins/Nicknames sind verboten.</li>
+    <li>Störende Geräusche in Voicechats sind untersagt (außer mit Zustimmung).</li>
+    <li>Anweisungen vom Serverteam sind zu befolgen.</li>
+  </ul>
+</div>
+
+<div class="center-box">
+  <h2>§6 Sanktionen</h2>
+  <ul>
+    <li>Leichte Verstöße: Verwarnung.</li>
+    <li>Schwere oder wiederholte Verstöße: Temporärer Bann.</li>
+    <li>Massive/wiederholte Verstöße: Permanenter Bann.</li>
+    <li>Im Zweifelsfall entscheidet das Serverteam über die Auslegung.</li>
+  </ul>
+</div>
+
+<div class="center-box">
+  <h2>§7 Regeländerung & Kontakt</h2>
+  <ul>
+    <li>Das Regelwerk kann jederzeit angepasst werden. Über Änderungen wird informiert.</li>
+    <li>Bei Fragen oder Problemen: Einfach ein Ticket im Discord erstellen.</li>
+  </ul>
+</div>
+
+<footer class="legal-footer footer-shared">
+    <div class="footer-link-box">
+      <a href="https://kypx.me/impressum" target="_blank">Impressum</a>
+    </div>
+    <div class="footer-link-box">
+      <a href="https://kypx.me/datenschutzerklaerung" target="_blank">Datenschutzerklärung</a>
+    </div>
+  </footer>
+
+</body>
+</html>
