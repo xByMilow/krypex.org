@@ -22,14 +22,12 @@ app.use(express.static(path.join(__dirname, 'public'), {
 const htmlRoutes = [
   '/impressum',
   '/datenschutzerklaerung',
-  '/datenschutzerklaerung-staff-dashboard',
-  '/datenschutzerklaerung-minecraft',
   '/regelwerk'
 ];
 
 htmlRoutes.forEach(route => {
   app.get(route, (req, res) => {
-    const fileName = `${route.replace('/', '')}.html`; // z.?B. impressum.html
+    const fileName = `${route.replace('/', '')}.html`;
     res.sendFile(path.join(__dirname, 'public', fileName), err => {
       if (err) {
         console.error(`Fehler beim Laden von ${fileName}:`, err);
@@ -37,10 +35,6 @@ htmlRoutes.forEach(route => {
       }
     });
   });
-});
-
-app.get('/forbidden', (req, res) => {
-  res.status(403).sendFile(path.join(__dirname, 'public', '403.html'));
 });
 
 app.get('/', (req, res) => {
@@ -62,5 +56,5 @@ app.use((err, req, res, next) => {
 });
 
 http.createServer(app).listen(PORT, () => {
-  console.log(`Server l‰uft unter http://localhost:${PORT}`);
+  console.log(`Server l√§uft unter http://localhost:${PORT}`);
 });
