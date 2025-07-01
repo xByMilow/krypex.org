@@ -36,20 +36,37 @@ htmlRoutes.forEach(route => {
   });
 });
 
-app.get('/forbidden', (req, res) => {
-  res.status(403).sendFile(path.join(__dirname, 'public', '403.html'));
-});
-
+//homepage
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'), err => {
   });
 });
 
+//impressum
+app.get('/impressum', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'impressum.html'), err => {
+  });
+});
+
+//datenschutzerklaerung
+app.get('/datenschutzerklaerung', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'datenschutzerklaerung.html'), err => {
+  });
+});
+
+//datenschutzerklaerung (soon)
+//app.get('/datenschutzerklaerung-zipline', (req, res) => {
+//  res.sendFile(path.join(__dirname, 'public', 'datenschutzerklaerung-zipline.html'), err => {
+//  });
+//});
+
+//nutzungsbedingungen
 app.get('/nutzungsbedingungen-zipline', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'nutzungsbedingungen-zipline.html'), err => {
   });
 });
 
+//error
 app.use((req, res) => {
   res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
 });
@@ -59,6 +76,7 @@ app.use((err, req, res, next) => {
   res.status(500).sendFile(path.join(__dirname, 'public', '500.html'));
 });
 
+
 http.createServer(app).listen(PORT, () => {
-  console.log(`Server läuft unter http://localhost:${PORT}`);
+  console.log(`ONLINE: ${PORT}`);
 });
