@@ -22,7 +22,6 @@ app.use(express.static(path.join(__dirname, 'public'), {
 const htmlRoutes = [
   '/impressum',
   '/datenschutzerklaerung',
-  '/regelwerk'
 ];
 
 htmlRoutes.forEach(route => {
@@ -37,12 +36,17 @@ htmlRoutes.forEach(route => {
   });
 });
 
+app.get('/forbidden', (req, res) => {
+  res.status(403).sendFile(path.join(__dirname, 'public', '403.html'));
+});
+
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'), err => {
-    if (err) {
-      console.error('Fehler beim Laden der Startseite:', err);
-      res.status(500).sendFile(path.join(__dirname, 'public', '500.html'));
-    }
+  });
+});
+
+app.get('/nutzungsbedingungen-zipline', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'nutzungsbedingungen-zipline.html'), err => {
   });
 });
 
